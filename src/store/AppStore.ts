@@ -40,7 +40,7 @@ class AppStore {
       abortConRef.current = new AbortController()
       const response = await fetch(`https://api.github.com/search/repositories?q=${query}`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
         },
         signal: abortConRef.current.signal
       });
@@ -57,7 +57,7 @@ class AppStore {
       const token = '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';
       const response = await fetch(`https://api.github.com/repos/${repoName}/readme`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
         },
       });
 
